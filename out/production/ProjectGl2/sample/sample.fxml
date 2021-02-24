@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="980.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Pane layoutX="2.0" layoutY="140.0" prefHeight="400.0" prefWidth="980.0" style="-fx-background-color: dimgray;">
+      <Pane layoutX="2.0" layoutY="140.0" prefHeight="400.0" prefWidth="980.0" style="-fx-background-color: lightgray;">
          <children>
             <Label layoutX="21.0" layoutY="98.0" text="Don't have an account?">
                <font>
