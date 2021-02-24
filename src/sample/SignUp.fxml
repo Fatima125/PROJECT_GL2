@@ -6,6 +6,8 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -23,6 +25,11 @@
         <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;">
             <children>
                 <TextField prefHeight="27.0" prefWidth="449.0" promptText="Username" style="-fx-background-color: floralwhite; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" HBox.hgrow="ALWAYS" />
+            <ImageView fitHeight="36.0" fitWidth="47.0" layoutX="424.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/man-user.png" />
+               </image>
+            </ImageView>
             </children>
             <VBox.margin>
                 <Insets left="15.0" right="15.0" top="15.0" />
@@ -31,6 +38,11 @@
         <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="245.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: floralwhite;">
             <children>
                 <TextField prefHeight="27.0" prefWidth="449.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" HBox.hgrow="ALWAYS" />
+            <ImageView fitHeight="36.0" fitWidth="47.0" layoutX="424.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/padlock.png" />
+               </image>
+            </ImageView>
             </children>
             <VBox.margin>
                 <Insets left="15.0" right="15.0" top="20.0" />
@@ -43,6 +55,11 @@
                   <Insets />
                </HBox.margin>
             </ComboBox>
+            <ImageView fitHeight="36.0" fitWidth="47.0" layoutX="424.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/gender.png" />
+               </image>
+            </ImageView>
          </children>
          <VBox.margin>
             <Insets left="15.0" right="15.0" top="20.0" />
@@ -51,6 +68,11 @@
       <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="313.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;">
          <children>
             <DatePicker prefHeight="27.0" prefWidth="449.0" promptText="BirthDate" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" />
+            <ImageView fitHeight="36.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/calendar.png" />
+               </image>
+            </ImageView>
          </children>
          <VBox.margin>
             <Insets left="15.0" right="15.0" top="20.0" />
