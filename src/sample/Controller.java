@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
@@ -21,10 +23,11 @@ public class Controller implements Initializable {
     private Parent fxml;
 
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        TranslateTransition t=new TranslateTransition(Duration.seconds(1),vbox);
-        t.setToX(vbox.getLayoutX() * 20);
+        TranslateTransition t = new TranslateTransition(Duration.seconds(1),vbox);
+        t.setToX(vbox.getLayoutX() * 13);
         t.play();
         t.setOnFinished((e) ->{
             try{
@@ -40,7 +43,7 @@ public class Controller implements Initializable {
     public void openSignin(ActionEvent event )
     {
         TranslateTransition t=new TranslateTransition(Duration.seconds(1),vbox);
-        t.setToX(vbox.getLayoutX() * 20);
+        t.setToX(vbox.getLayoutX() * 13);
         t.play();
         t.setOnFinished((e) ->{
             try{
@@ -68,4 +71,5 @@ public class Controller implements Initializable {
             }
         });
     }
+
 }
