@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignIn">
+
+    <children>
+        <BorderPane fx:id="BorderPaneMain" prefHeight="500.0" prefWidth="800.0">
+            <left>
+                <VBox prefHeight="662.0" prefWidth="207.0" style="-fx-background-color: lightGray;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Pane prefHeight="72.0" prefWidth="207.0">
+                            <children>
+                                <ImageView fitHeight="72.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/buddhist-yoga-pose.png" />
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="58.0" layoutY="22.0" prefHeight="50.0" prefWidth="143.0" text="Keep Balance">
+                                    <font>
+                                        <Font name="System Bold" size="22.0" />
+                                    </font>
+                                </Label>
+                            </children></Pane>
+                        <Pane prefHeight="73.0" prefWidth="206.0">
+                            <children>
+                                <Label layoutX="75.0" layoutY="27.0" prefHeight="47.0" prefWidth="84.0" text="Home">
+                                    <font>
+                                        <Font size="22.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="91.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/homepage.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#showHobbies" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Hobbies">
+                            <graphic>
+                                <ImageView fitHeight="31.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/compact-disc.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="140.0" mnemonicParsing="false" onAction="#showMentalIllnesses" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Mental illness">
+                            <graphic>
+                                <ImageView fitHeight="31.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/brain.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" onAction="#showPersonalDiary" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Personal diary">
+                            <graphic>
+                                <ImageView fitHeight="31.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/goal.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="280.0" mnemonicParsing="false" onAction="#showAccountManagement" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Account management">
+                            <graphic>
+                                <ImageView fitHeight="31.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/thinking.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="350.0" mnemonicParsing="false" onAction="#logOut" prefHeight="70.0" prefWidth="206.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Log out">
+                            <graphic>
+                                <ImageView fitHeight="31.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../img/log-out.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </VBox>
+            </left>
+        </BorderPane>
+    </children>
+
+</AnchorPane>

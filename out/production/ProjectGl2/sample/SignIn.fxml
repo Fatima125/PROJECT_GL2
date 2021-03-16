@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="480.0" style="-fx-background-color: Ivory;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="480.0" style="-fx-background-color: Ivory;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignIn">
    <children>
       <Label text="Login">
          <font>
@@ -22,7 +23,7 @@
       </Label>
       <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;">
          <children>
-            <TextField prefHeight="27.0" prefWidth="449.0" promptText="Username" style="-fx-background-color: floralwhite; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" HBox.hgrow="ALWAYS" />
+            <TextField fx:id="username" prefHeight="27.0" prefWidth="449.0" promptText="Username" style="-fx-background-color: floralwhite; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" HBox.hgrow="ALWAYS" />
             <ImageView fitHeight="34.0" fitWidth="49.0" layoutX="426.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/man-user.png" />
@@ -33,9 +34,9 @@
             <Insets left="15.0" right="15.0" top="20.0" />
          </VBox.margin>
       </HBox>
-      <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="245.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+      <HBox fx:id="passwordBox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="245.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;">
          <children>
-            <TextField prefHeight="27.0" prefWidth="449.0" promptText="Password" style="-fx-background-color: floralwhite; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" HBox.hgrow="ALWAYS" />
+            <PasswordField fx:id="password" prefHeight="25.0" prefWidth="425.0" promptText="password" style="-fx-background-color: floralwhite;" />
             <ImageView fitHeight="34.0" fitWidth="49.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/padlock.png" />
@@ -46,7 +47,7 @@
             <Insets left="15.0" right="15.0" top="20.0" />
          </VBox.margin>
       </HBox>
-      <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="456.0" style="-fx-background-color: floralwhite; -fx-border-color: black; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Sign in">
+      <Button fx:id="button" mnemonicParsing="false" onAction="#login" prefHeight="38.0" prefWidth="456.0" style="-fx-background-color: floralwhite; -fx-border-color: black; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Sign in">
          <font>
             <Font size="17.0" />
          </font>
@@ -54,5 +55,13 @@
             <Insets left="150.0" right="150.0" top="20.0" />
          </VBox.margin>
       </Button>
+      <Label fx:id="loginError">
+         <VBox.margin>
+            <Insets left="160.0" right="80.0" top="30.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </VBox>
