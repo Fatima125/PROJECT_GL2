@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="480.0" style="-fx-background-color: ivory;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="480.0" style="-fx-background-color: ivory;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SighUp">
     <children>
         <Label text="Subscription">
             <font>
@@ -24,7 +24,7 @@
         </Label>
         <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;">
             <children>
-                <TextField prefHeight="27.0" prefWidth="449.0" promptText="Username" style="-fx-background-color: floralwhite; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" HBox.hgrow="ALWAYS" />
+                <TextField fx:id="username" prefHeight="27.0" prefWidth="449.0" promptText="Username" style="-fx-background-color: floralwhite; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" HBox.hgrow="ALWAYS" />
             <ImageView fitHeight="36.0" fitWidth="47.0" layoutX="424.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/man-user.png" />
@@ -37,7 +37,7 @@
         </HBox>
         <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="245.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: floralwhite;">
             <children>
-                <TextField prefHeight="27.0" prefWidth="449.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" HBox.hgrow="ALWAYS" />
+                <TextField fx:id="password" prefHeight="27.0" prefWidth="449.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" HBox.hgrow="ALWAYS" />
             <ImageView fitHeight="36.0" fitWidth="47.0" layoutX="424.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/padlock.png" />
@@ -50,7 +50,7 @@
         </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="25.0" layoutY="283.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;">
          <children>
-            <ComboBox prefHeight="27.0" prefWidth="449.0" promptText="Gender" style="-fx-background-color: floralwhite; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" HBox.hgrow="ALWAYS">
+            <ComboBox fx:id="gender" prefHeight="27.0" prefWidth="449.0" promptText="Gender" style="-fx-background-color: floralwhite; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" HBox.hgrow="ALWAYS">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -67,7 +67,7 @@
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="313.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;">
          <children>
-            <DatePicker prefHeight="27.0" prefWidth="449.0" promptText="BirthDate" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" />
+            <DatePicker fx:id="birthDate" prefHeight="27.0" prefWidth="449.0" promptText="BirthDate" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;" />
             <ImageView fitHeight="36.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/calendar.png" />
@@ -78,7 +78,7 @@
             <Insets left="15.0" right="15.0" top="20.0" />
          </VBox.margin>
       </HBox>
-      <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="456.0" style="-fx-background-color: floralwhite; -fx-border-color: black; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Sign Up">
+      <Button mnemonicParsing="false" onAction="#createAccount" prefHeight="38.0" prefWidth="456.0" style="-fx-background-color: floralwhite; -fx-border-color: black; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Sign Up">
          <font>
             <Font size="17.0" />
          </font>
@@ -86,5 +86,13 @@
             <Insets left="150.0" right="150.0" top="20.0" />
          </VBox.margin>
       </Button>
+      <Label fx:id="subscriptionError">
+         <VBox.margin>
+            <Insets left="140.0" right="80.0" top="20.0" />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
     </children>
 </VBox>

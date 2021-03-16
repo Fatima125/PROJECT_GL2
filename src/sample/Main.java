@@ -25,6 +25,11 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();
+
+
+
+        J'ai changé pour pouvoir toujours instancier le main et créer les mêmes interfaces à
+        chaque fois
         */
 
         stage = primaryStage;
@@ -35,15 +40,16 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    //move from one scene to another
     public void changeScene(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
         stage.getScene().setRoot(pane);
     }
 
+    // change the title of the stage
     public void setStageTitle(String stageTitle) {
         stage.setTitle(stageTitle);
     }
-
 
     public static void main(String[] args) {
         launch(args);
