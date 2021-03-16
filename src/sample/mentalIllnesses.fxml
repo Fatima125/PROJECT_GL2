@@ -56,5 +56,14 @@
         </ImageView>
         <TextField layoutX="335.0" layoutY="214.0" prefHeight="205.0" prefWidth="282.0" promptText="advices" style="-fx-background-radius: 5px; -fx-background-color: transparent; -fx-border-radius: 5px; -fx-border-width: 1px; -fx-border-color: black;" />
         <TextField layoutX="14.0" layoutY="116.0" prefHeight="40.0" prefWidth="172.0" promptText="name" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-width: 1px; -fx-border-color: black; -fx-background-color: transparent;" />
+        <Button layoutX="228.0" layoutY="55.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="130.0" style="-fx-background-color: transparent; -fx-border-color: black; -fx-background-radius: 5px; -fx-border-radius: 5px; -fx-border-width: 1px;" text="Home">
+            <graphic>
+                <ImageView fitHeight="30.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/homepage.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
     </children>
 </AnchorPane>

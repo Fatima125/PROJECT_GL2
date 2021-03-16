@@ -1,5 +1,6 @@
 package sample;
 
+import entities.Admin;
 import entities.Subscriber;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,6 +39,7 @@ public class SignIn {
         else {
             Main main = new Main();
             if( i < 5) {
+                Admin admin = new Admin(username.getText(), password.getText());
                 Subscriber subscriber = new Subscriber(username.getText(), password.getText());
                 if (subscriber.exists()) {
                     main.changeScene("menuSubscriber.fxml");
@@ -45,8 +47,15 @@ public class SignIn {
                     i = 0;
                 }
                 else {
-                    loginError.setText("WRONG USERNAME OR PASSWORD");
-                    i++;
+                    if (admin.exists()) {
+                        main.changeScene("menuAdmin.fxml");
+                        main.setStageTitle("ADMIN");
+                        i = 0;
+                    }
+                    else {
+                        loginError.setText("WRONG USERNAME OR PASSWORD");
+                        i++;
+                    }
                 }
             }
         }
@@ -113,5 +122,18 @@ public class SignIn {
         PageLoader pageLoader = new PageLoader();
         Pane view = pageLoader.getPage("tvSeries.fxml");
         hobbiesMainPane.setCenter(view);
+    }
+
+    public void showStatistics(ActionEvent actionEvent) throws IOException {
+        Main menu = new Main();
+        menu.changeScene("statistics.fxml");
+        menu.setStageTitle("MY ACCOUNT");
+
+    }
+
+    public void showsSubscribers(ActionEvent actionEvent) throws IOException {
+        Main menu = new Main();
+        menu.changeScene("subscribersManagement.fxml");
+        menu.setStageTitle("MY ACCOUNT");
     }
 }
