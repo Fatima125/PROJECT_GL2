@@ -95,13 +95,13 @@ public class SignIn {
 
     public void showPersonalDiary(ActionEvent actionEvent) throws IOException {
         Main menu = new Main();
-        menu.changeScene("personalDiary.fxml");
+        menu.changeScene("PersonalDiary.fxml");
         menu.setStageTitle("PERSONAL DIARY");
     }
 
     public void showAccountManagement(ActionEvent actionEvent) throws IOException {
         Main menu = new Main();
-        menu.changeScene("manageAccount.fxml");
+        menu.changeScene("myAccount.fxml");
         menu.setStageTitle("MY ACCOUNT");
     }
 
@@ -127,13 +127,13 @@ public class SignIn {
     public void showStatistics(ActionEvent actionEvent) throws IOException {
         Main menu = new Main();
         menu.changeScene("statistics.fxml");
-        menu.setStageTitle("MY ACCOUNT");
+        menu.setStageTitle("STATISTICS");
 
     }
 
     public void showsSubscribers(ActionEvent actionEvent) throws IOException {
         Main menu = new Main();
         menu.changeScene("subscribersManagement.fxml");
-        menu.setStageTitle("MY ACCOUNT");
+        menu.setStageTitle("SUBSCRIBERS MANAGEMENT");
     }
 }
