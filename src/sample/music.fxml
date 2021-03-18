@@ -56,7 +56,7 @@
             <TableView fx:id="musicTable" prefHeight="311.0" prefWidth="600.0" style="-fx-background-color: white;">
               <columns>
                 <TableColumn fx:id="titleColumn" prefWidth="216.6666818857193" text="Title of the song" />
-                  <TableColumn fx:id="descriptionColumn" prefWidth="361.33335876464844" text="Description" />
+                  <TableColumn fx:id="descriptionColumn" prefWidth="361.33335876464844" text="Singer" />
               </columns>
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

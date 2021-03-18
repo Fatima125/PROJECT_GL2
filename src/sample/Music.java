@@ -18,7 +18,7 @@ import java.util.List;
 public class Music {
 
 
-    ObservableList<String> musicStyles = FXCollections.observableArrayList("ALL", "pop", "rock", "country", "rap", "R&B", "classical", "Jazz", "k-pop");
+    ObservableList<String> musicStyles = FXCollections.observableArrayList("pop", "rock", "country", "rap", "R&B", "classical", "Jazz", "k-pop");
 
     @FXML
     private TableView<entities.Music> musicTable;
@@ -32,11 +32,11 @@ public class Music {
     private ComboBox<String> musicBox;
     @FXML
     private void initialize() {
-        musicBox.setValue("ALL");
+        musicBox.setValue("pop");
         musicBox.setItems(musicStyles);
     }
 
-    public void iniColumn() {
+    public void initColumn() {
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
     }
@@ -46,14 +46,17 @@ public class Music {
         entities.Music musicResult;
         Subscriber subscriber = new Subscriber();
         ResultSet resultSet;
+        /*
         if(musicBox.getValue().equals("ALL")){
             resultSet = subscriber.showMusic();
             subscriber.showMusic();
         }
-        else {
+        */
+
+     // else {
             resultSet = subscriber.showSpecificTypeOfMusic(musicBox.getValue());
             subscriber.showSpecificTypeOfMusic(musicBox.getValue());
-        }
+            //}
         List<entities.Music> data = new ArrayList<>();
         while (resultSet.next()) {
             musicResult = new entities.Music();
@@ -61,7 +64,7 @@ public class Music {
             musicResult.setDescription(resultSet.getString("DESCRIPTION"));
             data.add(musicResult);
         }
-        iniColumn();
+        initColumn();
         ObservableList<entities.Music> result = FXCollections.observableArrayList(data);
         musicTable.setItems(result);
     }

@@ -19,6 +19,12 @@ public class Subscriber extends Account implements User {
     Connection connection = dbConnection.getConnection();
     String query;
 
+    public Subscriber(String password, String gender, LocalDate birthDate) {
+        this.password = password;
+        this.birthDate = birthDate;
+        this.gender = gender;
+    }
+
     //setters & getters
     public String getUsername() {
         return username;
@@ -100,7 +106,9 @@ public class Subscriber extends Account implements User {
     //update account
     public Boolean modifyAccount(Subscriber subscriber) throws SQLException {
         Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-        query = "update subscribers set username ='"+subscriber.getUsername()+"', password= '"+subscriber.getPassword()+"', gender = '"+subscriber.getGender()+"', birthdate = '"+subscriber.getBirthDate().toString()+" where username = '"+this.username+")";
+
+       //query = "update subscribers set username ='"+subscriber.getUsername()+"', password= '"+subscriber.getPassword()+"', gender = '"+subscriber.getGender()+"', birthdate = '"+subscriber.getBirthDate().toString()+" where username = '"+this.username+"'";
+        query = "update subscribers set password= '"+subscriber.getPassword()+"', gender = '"+subscriber.getGender()+"', birthdate = '"+subscriber.getBirthDate().toString()+"' where username = '"+this.username+"'";
         int result = statement.executeUpdate(query);
         return (result == 1);
     }
@@ -180,6 +188,68 @@ public class Subscriber extends Account implements User {
         ResultSet resultSet = statement.executeQuery(query);
         if(resultSet.first())
             return resultSet;
+        else return null;
+    }
+
+    public ResultSet showIllness(String illness) throws SQLException, NullPointerException{
+        query = "select * from illness where title = '"+illness+"'";
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        ResultSet resultSet = statement.executeQuery(query);
+        if(resultSet.first())
+            return resultSet;
+        else return null;
+    }
+
+    public ResultSet showNote(String noteTitle) throws SQLException, NullPointerException{
+        query = "select * from note where title = '"+noteTitle+"'";
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        ResultSet resultSet = statement.executeQuery(query);
+        if(resultSet.first())
+            return resultSet;
+        else return null;
+    }
+
+    public Boolean deleteNote(String noteTile) throws SQLException {
+        query = "delete from note where title = '"+noteTile+"'";
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        int resultSet = statement.executeUpdate(query);
+        return (resultSet == 1);
+    }
+
+    public Boolean modifyNote(NoteBook note) throws SQLException {
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        query = "update note set description = '" +note.getDescription()+ "' where title = '"+note.getTitle()+"'";
+        int result = statement.executeUpdate(query);
+        return (result == 1);
+    }
+
+    public boolean addNote(NoteBook note) throws SQLException {
+        query = "insert into note values ('"+note.getTitle()+"', '"+note.getDescription()+"')";
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        int result = statement.executeUpdate(query);
+        return (result == 1);
+    }
+
+    public ResultSet searchNote(String title) throws  SQLException {
+        query = "select * from note where title = '" +title+"'";
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        ResultSet resultSet  = statement.executeQuery(query);
+        if(resultSet.first()) return resultSet;
+        else return null;
+    }
+
+    public Boolean searchNote(NoteBook noteBook) throws  SQLException {
+        query = "select * from note where title = '" +noteBook.getTitle()+"'";
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        ResultSet resultSet  = statement.executeQuery(query);
+        return resultSet.next();
+    }
+
+    public ResultSet showNotes() throws  SQLException {
+        query = "select title from note";
+        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+        ResultSet resultSet  = statement.executeQuery(query);
+        if(resultSet.first()) return resultSet;
         else return null;
     }
 }

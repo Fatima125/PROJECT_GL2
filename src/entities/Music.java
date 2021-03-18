@@ -45,24 +45,4 @@ public class Music {
     DbConnection dbConnection = new DbConnection();
     Connection connection = dbConnection.getConnection();
     String query;
-
-    /*
-    public ResultSet showMusic() throws SQLException {
-        query = "select * from music";
-        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        ResultSet resultSet = statement.executeQuery(query);
-        if(resultSet.first()) return resultSet;
-        else return null;
-    }
-
-    public ResultSet showSpecificTypeOfMusic(String style) throws SQLException, NullPointerException{
-        query = "select * from music where type = '"+style+"'";
-        Statement statement = connection.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-        ResultSet resultSet = statement.executeQuery(query);
-        if(resultSet.first())
-            return resultSet;
-        else return null;
-    }
-
-    */
 }
